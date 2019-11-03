@@ -50,7 +50,7 @@ Height Shift Range | 0.05
 Shear range | 0.05
 Zoom range | 0.05
 Horizontal Flip | True
-Fill Mode | nearest
+Fill Mode | reflect
 
 **Augmentation images examples**
 
