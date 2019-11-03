@@ -30,7 +30,7 @@ tensorboard --logdir=./logs --host localhost
 # Overview
 
 ## Data
-The original dataset is from [isbi challenge](http://brainiac2.mit.edu/isbi_challenge/home), and I've downloaded it and done the pre-processing.
+The original dataset is from [ISBI challenge](http://brainiac2.mit.edu/isbi_challenge/home), and I've downloaded it and done the pre-processing.
 
 You can find it in folder data/membrane.
 
