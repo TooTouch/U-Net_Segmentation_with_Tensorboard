@@ -53,6 +53,7 @@ Horizontal Flip | True
 Fill Mode | reflect
 
 **Augmentation images examples**
+![](https://github.com/bllfpc/U-Net_Segmentation/blob/master/images/augmentation.png)
 
 2. Hyperparameters
 - epochs : 50
@@ -65,13 +66,10 @@ Fill Mode | reflect
 - Accuracy
 
 ## Results
-1. History
-
-2. Predicted image
-
+![](https://github.com/bllfpc/U-Net_Segmentation/blob/master/images/results.png)
 
 ## Tensorboard
-
+![](https://github.com/bllfpc/U-Net_Segmentation/blob/master/images/tensorboard.gif)
 
 # Reference
 - Paper: [U-Net: Convolutional Networks for Biomedical Image Segmentation](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/)
