@@ -105,3 +105,6 @@ venv.bak/
 
 # model
 *.h5py
+
+# power point
+*.pptx
