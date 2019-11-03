@@ -6,7 +6,7 @@ A Korean translation of U-Net Paper: http://bit.ly/UNet_Paper_Translation
 
 This tutorial depends on the following libraries:
 
-Tensorflow == 1.14
+Tensorflow == 1.14  
 Keras == 2.3.1
 
 **How to train and test**
