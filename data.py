@@ -1,20 +1,11 @@
-from __future__ import print_function
 from keras.preprocessing.image import ImageDataGenerator
 
-import numpy as np 
 import os
-import glob
+import numpy as np 
 import skimage.io as io
 import skimage.transform as trans
 
-def image_masking(img,mask):
-    img = img / 255
-    mask = mask / 255
-    mask[mask > 0.5] = 1
-    mask[mask <= 0.5] = 0
-    return (img,mask)
-
-def trainGenerator(batch_size, train_path, image_folder, mask_folder, aug_dict, image_color_mode = "grayscale",
+def trainGenerator(batch_size, train_path, image_folder, mask_folder, aug_dict, shuffle = True, image_color_mode = "grayscale",
                    mask_color_mode = "grayscale", image_save_prefix  = "image", mask_save_prefix  = "mask",
                    save_to_dir = None, target_size = (256,256), seed = 1):
     '''
@@ -31,6 +22,7 @@ def trainGenerator(batch_size, train_path, image_folder, mask_folder, aug_dict, 
         color_mode = image_color_mode,
         target_size = target_size,
         batch_size = batch_size,
+        shuffle= shuffle,
         save_to_dir = save_to_dir,
         save_prefix  = image_save_prefix,
         seed = seed)
@@ -41,12 +33,12 @@ def trainGenerator(batch_size, train_path, image_folder, mask_folder, aug_dict, 
         color_mode = mask_color_mode,
         target_size = target_size,
         batch_size = batch_size,
+        shuffle= shuffle,
         save_to_dir = save_to_dir,
         save_prefix  = mask_save_prefix,
         seed = seed)
     train_generator = zip(image_generator, mask_generator)
     for (img,mask) in train_generator:
-        img,mask = image_masking(img,mask)
         yield (img,mask)
 
 
