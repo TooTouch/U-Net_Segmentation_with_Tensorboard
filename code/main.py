@@ -7,8 +7,8 @@ import os
 
 def main():
     # directory
-    history_dir = os.path.join(os.getcwd(),'history')
-    log_dir = os.path.join(os.getcwd(),'logs')
+    history_dir = os.path.abspath(os.path.join(os.getcwd(),'../history'))
+    log_dir = os.path.abspath(os.path.join(os.getcwd(),'../logs'))
 
     # create directiry
     if not os.path.isdir(history_dir):
@@ -24,7 +24,7 @@ def main():
     valid_length = 5
     nb_aug = 10
     valid_steps = int(valid_length/batch_size)
-    log_id = len(os.listdir('logs'))
+    log_id = len(os.listdir('../logs'))
 
     # generator parameters
     data_gen_args = dict(rescale=1./255,
@@ -37,16 +37,16 @@ def main():
                          fill_mode='reflect')
 
     # generator
-    myGene = trainGenerator(batch_size, 'data/membrane/train', 'image', 'label', data_gen_args, save_to_dir = None)
-    myGene_valid = validGenerator(batch_size, 'data/membrane/validation', 'image', 'label')
+    myGene = trainGenerator(batch_size, '../data/membrane/train', 'image', 'label', data_gen_args, save_to_dir = None)
+    myGene_valid = validGenerator(batch_size, '../data/membrane/validation', 'image', 'label')
 
     # model
     model = unet()
 
     # callbacks
-    model_checkpoint = kb.ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
-    tb = TensorBoardWrapper(myGene_valid, nb_steps=valid_steps, log_dir='./logs/%d'%log_id, histogram_freq=1, batch_size=1, write_graph=True, write_grads=True, write_images=False)
-    csv_logger = kb.CSVLogger('./history/%d.csv'%log_id, append=True)
+    model_checkpoint = kb.ModelCheckpoint('../unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
+    tb = TensorBoardWrapper(myGene_valid, nb_steps=valid_steps, log_dir='../logs/%d'%log_id, histogram_freq=1, batch_size=1, write_graph=True, write_grads=True, write_images=False)
+    csv_logger = kb.CSVLogger('../history/%d.csv'%log_id, append=True)
 
     callbacks = [model_checkpoint, tb, csv_logger]
 
@@ -60,9 +60,9 @@ def main():
                         validation_steps=valid_length/batch_size)
 
     # test
-    testGene = testGenerator("data/membrane/test")
+    testGene = testGenerator("../data/membrane/test")
     results = model.predict_generator(testGene,30,verbose=1)
-    saveResult("data/membrane/test",results)
+    saveResult("../data/membrane/test",results)
 
 
 if __name__=='__main__':
