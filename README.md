@@ -6,18 +6,25 @@ A Korean translation of U-Net Paper: http://bit.ly/UNet_Paper_Translation
 
 This tutorial depends on the following libraries:
 
-Tensorflow == 1.14  
-Keras == 2.3.1
+- Tensorflow == 1.14  
+- Keras == 2.3.1
 
-**How to train and test**
+My computing resources are as follows:
+
+- CPU: Intel i7-8700k  
+- GPU: GTX 1080ti  
+- RAM: 64GB  
+
+# How to Run
 ```
 python main.py
 ```
 
-**How to run Tensorboard**
+**Tensorboard**
 ```
 tensorboard --logdir=./logs --host localhost
 ```
+
 
 ---
 # Overview
@@ -28,14 +35,15 @@ The original dataset is from [isbi challenge](http://brainiac2.mit.edu/isbi_chal
 You can find it in folder data/membrane.
 
 ## Model Architecture
+![](https://github.com/bllfpc/U-Net_Segmentation/blob/master/img/u-net-architecture.png)
 
 ## Training Detail
 1. Data Augmentation
-50 times more images were used from the original number.
+
+400 times more images were used from the original number.
 
 Method | Value 
 ---|---
-Elastic Deformation | alpha=150, sigma=10, alpha_affine=10
 Rotation Range | 0.2
 Width Shift Range | 0.05
 Height Shift Range | 0.05
