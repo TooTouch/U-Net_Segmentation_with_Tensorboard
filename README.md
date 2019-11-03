@@ -35,7 +35,7 @@ The original dataset is from [isbi challenge](http://brainiac2.mit.edu/isbi_chal
 You can find it in folder data/membrane.
 
 ## Model Architecture
-![](https://github.com/bllfpc/U-Net_Segmentation/blob/master/images/augmentation.png)
+![](https://github.com/bllfpc/U-Net_Segmentation/blob/master/images/u-net-architecture.png)
 
 ## Training Detail
 1. Data Augmentation
