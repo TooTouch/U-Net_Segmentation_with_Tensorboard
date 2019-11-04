@@ -40,7 +40,7 @@ You can find it in folder data/membrane.
 ## Training Detail
 1. Data Augmentation
 
-400 times more images were used from the original number.
+10 times more images were used from the original number.
 
 Method | Value 
 ---|---
@@ -66,6 +66,9 @@ Fill Mode | reflect
 - Accuracy
 
 ## Results
+
+Model performance was approximately 91% accuracy for validation data when 50 epochs were trained.
+
 ![](https://github.com/bllfpc/U-Net_Segmentation/blob/master/images/results.png)
 
 ## Tensorboard
