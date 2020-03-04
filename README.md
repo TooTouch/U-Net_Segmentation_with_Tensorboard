@@ -1,5 +1,7 @@
 # U-Net Segmentation with Tensorboard
 
+![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FTooTouch%2FU-Net_Segmentation_with_Tensorboard)
+
 This is a simple implementation of the U-Net arhitecture and a project to utilize segmentation using Tensorboard.
 
 A Korean translation of U-Net Paper: http://bit.ly/UNet_Paper_Translation
